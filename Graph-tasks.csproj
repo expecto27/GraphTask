@@ -141,6 +141,9 @@
     <EmbeddedResource Include="task1.resx">
       <DependentUpon>task1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="task3.resx">
+      <DependentUpon>task3.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
