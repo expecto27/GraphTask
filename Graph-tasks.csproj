@@ -141,8 +141,14 @@
     <EmbeddedResource Include="task1.resx">
       <DependentUpon>task1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="task2.resx">
+      <DependentUpon>task2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="task3.resx">
       <DependentUpon>task3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task4.resx">
+      <DependentUpon>task4.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
