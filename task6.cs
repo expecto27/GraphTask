@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Graph_tasks
 {
-    public partial class Form1 : Form
+    public partial class task6 : Form
     {
-        public Form1()
+        public task6()
         {
             InitializeComponent();
         }
