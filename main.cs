@@ -19,73 +19,97 @@ namespace Graph_tasks
         private void button1_Click_1(object sender, EventArgs e)
         {
             task1 t = new task1();
+            this.Hide();  
             t.ShowDialog();
+            this.Close(); 
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             task2 t = new task2();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button5_Click_1(object sender, EventArgs e)
         {
             task3 t = new task3();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
             task4 t = new task4();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
             task5 t = new task5();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
             task6 t = new task6();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button7_Click_1(object sender, EventArgs e)
         {
             task7 t = new task7();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button8_Click_1(object sender, EventArgs e)
         {
             task8 t = new task8();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button9_Click_1(object sender, EventArgs e)
         {
             task9 t = new task9();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button10_Click_1(object sender, EventArgs e)
         {
             task10 t = new task10();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button11_Click_1(object sender, EventArgs e)
         {
             task11 t = new task11();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void button12_Click_1(object sender, EventArgs e)
         {
             task12 t = new task12();
+            this.Hide();
             t.ShowDialog();
+            this.Close();
         }
 
         private void close_Click(object sender, EventArgs e)
