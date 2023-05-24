@@ -37,6 +37,20 @@ namespace Graph_tasks
             this.Close();
         }
 
+        Point last;
+        private void task1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - last.X;
+                this.Top += e.Y - last.Y;
+            }
+        }
+
+        private void task1_MouseDown(object sender, MouseEventArgs e)
+        {
+            last = new Point(e.X, e.Y);
+        }
 
 
 

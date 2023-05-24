@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.close = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -91,6 +91,28 @@
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(31, 362);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(510, 57);
+            this.button2.TabIndex = 31;
+            this.button2.Text = "Проверить\r\n";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(53, 296);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(441, 33);
+            this.textBox1.TabIndex = 30;
             // 
             // label3
             // 
@@ -167,27 +189,6 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(53, 296);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(441, 33);
-            this.textBox1.TabIndex = 30;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(31, 362);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(510, 57);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Проверить\r\n";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -196,14 +197,14 @@
             this.textBox2.Size = new System.Drawing.Size(74, 33);
             this.textBox2.TabIndex = 32;
             // 
-            // task2
+            // task4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(569, 473);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "task2";
+            this.Name = "task4";
             this.Text = "Задача 1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

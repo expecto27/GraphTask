@@ -17,7 +17,7 @@ namespace Graph_tasks
 
         private bool shouldDrawGraph = false;
 
-        private string dfs = "";
+        private string bfs = "";
 
         private int[,] matrix;
 
@@ -142,10 +142,10 @@ namespace Graph_tasks
                     MessageBox.Show("Неверное значение", "Проверьте введенные данные", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            this.dfs = "";
-            PerformDFS(s[0]);
+            this.bfs = "";
+            PerformBFS(s[0]);
 
-            if (val == this.dfs)
+            if (val == this.bfs)
             {
                 MessageBox.Show("Все верно", "Поздравляем", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
@@ -154,44 +154,48 @@ namespace Graph_tasks
                 MessageBox.Show("Не верно", "Поздравляем", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void DFS(int vertex, bool[] visited)
+        private void BFS(int startVertex, bool[] visited)
         {
-            visited[vertex] = true;
-            this.dfs += (vertex + 1);
-            for (int i = 0; i < matrix.GetLength(1); i++)
+            int vertexCount = matrix.GetLength(0);
+            Queue<int> queue = new Queue<int>();
+
+            visited[startVertex] = true;
+            queue.Enqueue(startVertex);
+
+            while (queue.Count > 0)
             {
-                if (matrix[vertex, i] != 0 && !visited[i])
+                int currentVertex = queue.Dequeue();
+                this.bfs += (currentVertex + 1);
+
+                for (int i = 0; i < vertexCount; i++)
                 {
-                    DFS(i, visited);
+                    if (matrix[currentVertex, i] != 0 && !visited[i])
+                    {
+                        visited[i] = true;
+                        queue.Enqueue(i);
+                    }
                 }
             }
         }
 
-
-        private void PerformDFS(int startVertex)
+        private void PerformBFS(int startVertex)
         {
             int vertexCount = matrix.GetLength(0);
             bool[] visited = new bool[vertexCount];
 
-            // Найдите вершину, из которой есть путь в первую вершину (vertex 0)
 
-            // Если такая вершина найдена, начните обход с неё
-            if (startVertex != -1)
-            {
-                DFS(startVertex, visited);
-            }
+            BFS(startVertex, visited);
+
 
             // Продолжите обход для остальных непосещенных вершин
             for (int i = 0; i < vertexCount; i++)
             {
                 if (!visited[i])
                 {
-                    DFS(i, visited);
+                    BFS(i, visited);
                 }
             }
         }
-
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
@@ -211,7 +215,6 @@ namespace Graph_tasks
                 int pictureBoxHeight = pictureBox1.Height;
 
                 int vertexRadius = Math.Min(pictureBoxWidth, pictureBoxHeight) / 10;
-
                 int vertexCount = adjacencyMatrix.GetLength(0);
 
                 PointF[] vertexCenters = new PointF[vertexCount];

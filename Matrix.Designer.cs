@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(595, 296);
             this.panel1.TabIndex = 5;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Orange;
+            this.label2.Location = new System.Drawing.Point(123, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(185, 23);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Матрица смежности:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(237, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 26);
+            this.label1.TabIndex = 4;
             // 
             // button2
             // 
@@ -60,27 +83,6 @@
             this.button2.Text = "Закрыть окно";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(237, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 26);
-            this.label1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Location = new System.Drawing.Point(123, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 23);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Матрица смежности:";
             // 
             // Matrix
             // 
