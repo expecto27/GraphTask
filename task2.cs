@@ -18,8 +18,8 @@ namespace Graph_tasks
         private int n = -1;
 
         private bool shouldDrawGraph = false;
-        
-        private Stack<int> s = new Stack<int>();
+
+        private string dfs = "";
         
         private int[,] matrix;
 
@@ -130,13 +130,13 @@ namespace Graph_tasks
         private void button2_Click(object sender, EventArgs e)
         {
             string val = textBox1.Text;
-            
+            int[] s = new int[val.Length];
             for(int i = val.Length - 1; i >= 0; i--)
             {
                 try
                 {
                     int t = Convert.ToInt32(val[i]) - 48;
-                    s.Push(t);
+                    s[i] = t - 1;
                     if (t > this.n || t < 0) throw new FormatException();
                 }
                 catch (FormatException)
@@ -144,47 +144,56 @@ namespace Graph_tasks
                     MessageBox.Show("Неверное значение", "Проверьте введенные данные", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            this.dfs = "";
+            PerformDFS(s[0]);
 
-            PerformDFS();
-
+            if (val == this.dfs)
+            {
+                MessageBox.Show("Все верно", "Поздравляем", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                MessageBox.Show("Не верно", "Поздравляем", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         private void DFS(int vertex, bool[] visited)
         {
-            s.Pop();
-
-            if (visited[vertex]) MessageBox.Show("aff"); 
-            
             visited[vertex] = true;
-            
-            for (int i = 0; i < matrix.GetLength(0); i++)
+            this.dfs += (vertex + 1);
+            for (int i = 0; i < matrix.GetLength(1); i++)
             {
-                if (s.Count() > 0 && matrix[vertex, s.Peek()-1] != 0 && !visited[s.Peek()-1])
+                if (matrix[vertex, i] != 0 && !visited[i])
                 {
-                    DFS(s.Peek() - 1, visited);
+                    DFS(i, visited);
                 }
             }
         }
 
 
-        private void PerformDFS()
+        private void PerformDFS(int startVertex)
         {
             int vertexCount = matrix.GetLength(0);
             bool[] visited = new bool[vertexCount];
 
+            // Найдите вершину, из которой есть путь в первую вершину (vertex 0)
 
             // Если такая вершина найдена, начните обход с неё
-            
-            DFS(s.Peek() - 1, visited);
+            if (startVertex != -1)
+            {
+                DFS(startVertex, visited);
+            }
 
             // Продолжите обход для остальных непосещенных вершин
             for (int i = 0; i < vertexCount; i++)
             {
                 if (!visited[i])
                 {
-                    MessageBox.Show("ASDA");
+                    DFS(i, visited);
                 }
             }
         }
+
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {

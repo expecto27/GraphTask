@@ -61,6 +61,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(569, 473);
             this.panel1.TabIndex = 5;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // label3
             // 
@@ -100,6 +102,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(348, 429);
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // close
             // 
@@ -126,6 +129,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Получить обход графа по алгоритму обхода в глубину\r\n";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
