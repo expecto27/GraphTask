@@ -60,6 +60,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(567, 471);
             this.panel1.TabIndex = 6;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // label3
             // 
@@ -137,6 +139,8 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(569, 162);
             this.panel3.TabIndex = 14;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // panel2
             // 
@@ -147,6 +151,8 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(570, 141);
             this.panel2.TabIndex = 0;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // richTextBox1
             // 

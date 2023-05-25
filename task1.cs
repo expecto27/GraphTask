@@ -55,7 +55,7 @@ namespace Graph_tasks
             bool[] visited = new bool[vertexCount];
 
             // Найдите вершину, из которой есть путь в первую вершину (vertex 0)
-            int startVertex = FindStartVertex(adjacencyMatrix, 0);
+            int startVertex = FindStartVertex(adjacencyMatrix);
 
             // Если такая вершина найдена, начните обход с неё
             if (startVertex != -1)
@@ -73,19 +73,28 @@ namespace Graph_tasks
             }
         }
 
-        private int FindStartVertex(int[,] adjacencyMatrix, int targetVertex)
+        private int FindStartVertex(int[,] adjacencyMatrix)
         {
             int vertexCount = adjacencyMatrix.GetLength(0);
 
+            int powerMax = 100;
+            int index = 0;
             for (int i = 0; i < vertexCount; i++)
             {
-                if (adjacencyMatrix[i, targetVertex] != 0)
+                int powerVertex = 0;
+                for(int j = 0; j < vertexCount; j++)
                 {
-                    return i;
+                    powerVertex += adjacencyMatrix[j, i];
+                    
+                }
+                if(powerVertex < powerMax)
+                {
+                    powerMax = powerVertex;
+                    index = i;
                 }
             }
 
-            return -1; // Если не найдена ни одна вершина с путём в целевую вершину
+            return index;
         }
 
 

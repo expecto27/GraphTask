@@ -45,13 +45,37 @@ namespace Graph_tasks
                 }
             }
         }
+        
+        private int FindStartVertex(int[,] adjacencyMatrix)
+        {
+            int vertexCount = adjacencyMatrix.GetLength(0);
+
+            int powerMax = 100;
+            int index = 0;
+            for (int i = 0; i < vertexCount; i++)
+            {
+                int powerVertex = 0;
+                for (int j = 0; j < vertexCount; j++)
+                {
+                    powerVertex += adjacencyMatrix[j, i];
+
+                }
+                if (powerVertex < powerMax)
+                {
+                    powerMax = powerVertex;
+                    index = i;
+                }
+            }
+
+            return index;
+        }
 
         private void PerformBFS(int[,] adjacencyMatrix)
         {
             int vertexCount = adjacencyMatrix.GetLength(0);
             bool[] visited = new bool[vertexCount];
 
-            int startVertex = 0;
+            int startVertex = FindStartVertex(adjacencyMatrix);
 
             BFS(adjacencyMatrix, startVertex, visited);
             
