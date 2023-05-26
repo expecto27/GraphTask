@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace Graph_tasks
 {
@@ -265,6 +266,11 @@ namespace Graph_tasks
                     }
                 }
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Process proc = Process.Start("notepad.exe");
         }
     }
 }

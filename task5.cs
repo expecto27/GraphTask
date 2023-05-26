@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -260,6 +261,11 @@ namespace Graph_tasks
         private void task1_MouseDown(object sender, MouseEventArgs e)
         {
             last = new Point(e.X, e.Y);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Process proc = Process.Start("notepad.exe");
         }
     }
 }

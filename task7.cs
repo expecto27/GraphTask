@@ -93,7 +93,7 @@ namespace Graph_tasks
                 {
                     if (adjacencyMatrix[i, j] > 0)
                     {
-                        int weight = random.Next(1, 10); // Генерация случайного веса ребра
+                        int weight = adjacencyMatrix[i, j];
                         edges.Add(new Edge(i, j, weight));
                     }
                 }
@@ -110,7 +110,7 @@ namespace Graph_tasks
 
                     g.DrawLine(Pens.Black, node1, node2);
                     Point midpoint = new Point((node1.X + node2.X) / 2, (node1.Y + node2.Y) / 2);
-                    g.DrawString(edge.Weight.ToString(), Font, Brushes.Black, midpoint);
+                    g.DrawString(edge.Weight.ToString(), Font, Brushes.White, midpoint);
                 }
 
                 for (int i = 0; i < numNodes; i++)
@@ -217,7 +217,7 @@ namespace Graph_tasks
                     Point node2 = nodes[edge.Node2];
 
                     g.DrawLine(Pens.Red, node1, node2);
-                    g.DrawString(edge.Weight.ToString(), Font, Brushes.Black,
+                    g.DrawString(edge.Weight.ToString(), Font, Brushes.White,
                         (node1.X + node2.X) / 2, (node1.Y + node2.Y) / 2);
                 }
 

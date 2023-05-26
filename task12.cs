@@ -100,7 +100,6 @@ namespace Graph_tasks
         }
 
 
-        //Process proc = Process.Start("notepad.exe");
         private int[,] GetAdjacencyMatrix(string input)
         {
             if (shouldDrawGraph)
@@ -261,5 +260,9 @@ namespace Graph_tasks
             last = new Point(e.X, e.Y);
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Process proc = Process.Start("notepad.exe");
+        }
     }
 }
