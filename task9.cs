@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,8 @@ namespace Graph_tasks
 
         public task9()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }
 
@@ -41,6 +44,9 @@ namespace Graph_tasks
             {
                 MessageBox.Show("Please parse the adjacency matrix first.");
             }
+            this.ClientSize = new System.Drawing.Size(950, 473);
+            this.close.Location = new System.Drawing.Point(925, 4);
+            
         }
 
         private bool ParseAdjacencyMatrix()
@@ -230,6 +236,31 @@ namespace Graph_tasks
                 Weight = weight;
             }
         }
+        Point last;
+        private void task1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - last.X;
+                this.Top += e.Y - last.Y;
+            }
+        }
 
+        private void task1_MouseDown(object sender, MouseEventArgs e)
+        {
+            last = new Point(e.X, e.Y);
+        }
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            main M = new main();
+            M.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Process proc = Process.Start("notepad.exe");
+        }
     }
 }

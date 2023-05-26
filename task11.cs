@@ -20,6 +20,8 @@ namespace Graph_tasks
         private int[,] matrix;
         public task11()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }
 

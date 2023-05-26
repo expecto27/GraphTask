@@ -22,6 +22,8 @@ namespace Graph_tasks
         private Random random;
         public task7()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }
 

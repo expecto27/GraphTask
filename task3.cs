@@ -20,6 +20,8 @@ namespace Graph_tasks
 
         public task3()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }
 

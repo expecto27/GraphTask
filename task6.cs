@@ -27,6 +27,8 @@ namespace Graph_tasks
 
         public task6()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }
         private void button1_Click(object sender, EventArgs e)

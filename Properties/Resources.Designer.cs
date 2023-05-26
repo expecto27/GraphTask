@@ -63,16 +63,6 @@ namespace Graph_tasks.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap notepad {
-            get {
-                object obj = ResourceManager.GetObject("notepad", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap notepadd {
             get {
                 object obj = ResourceManager.GetObject("notepadd", resourceCulture);

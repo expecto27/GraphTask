@@ -21,6 +21,8 @@ namespace Graph_tasks
         
         public task1()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }
         private PointF GetVertexCenter(int vertexIndex, int vertexCount, int vertexRadius)

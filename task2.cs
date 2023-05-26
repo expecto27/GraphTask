@@ -28,6 +28,8 @@ namespace Graph_tasks
         private Font vertexFont = new Font("Impact", 18);
         public task2()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }
         

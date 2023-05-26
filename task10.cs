@@ -19,6 +19,8 @@ namespace Graph_tasks
 
         public task10()
         {
+
+            this.Icon = new Icon("../../icon.ico");
             InitializeComponent();
         }        
         
@@ -116,6 +118,11 @@ namespace Graph_tasks
                 }
                 if (vertexCount == 0) break;
             }
+
+
+
+            return codePr;
+        }
 /*
 0 0 0 1 0 0
 0 0 0 1 0 0
@@ -123,11 +130,6 @@ namespace Graph_tasks
 1 1 1 0 1 0
 0 0 0 0 1 0
 */
-
-
-            return codePr;
-        }
-
         private int[,] GetAdjacencyMatrix(string input)
         {
             if (shouldDrawGraph)
