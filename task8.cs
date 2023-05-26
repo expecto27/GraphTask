@@ -127,7 +127,7 @@ namespace Graph_tasks
                     int nodeY = node.Y - nodeSize / 2;
 
                    
-                    Brush nodeBrush = Brushes.White;
+                    Brush nodeBrush = Brushes.Green;
                     if (i + 1 == startNode) // Проверка, является ли текущая вершина начальной вершиной
                     {
                         nodeBrush = Brushes.Red;
@@ -135,7 +135,7 @@ namespace Graph_tasks
 
                     g.FillEllipse(nodeBrush, nodeX, nodeY, nodeSize, nodeSize);
                     g.DrawEllipse(Pens.Black, nodeX, nodeY, nodeSize, nodeSize);
-                    g.DrawString((i + 1).ToString(), Font, Brushes.Black, node.X - 8, node.Y - 8);
+                    g.DrawString((i + 1).ToString(), Font, Brushes.White, node.X - 8, node.Y - 8);
                 }
 
                 foreach (Edge edge in edges)
@@ -145,7 +145,7 @@ namespace Graph_tasks
 
                     g.DrawLine(Pens.Black, node1, node2);
                     Point midpoint = new Point((node1.X + node2.X) / 2, (node1.Y + node2.Y) / 2);
-                    g.DrawString(edge.Weight.ToString(), Font, Brushes.Black, midpoint);
+                    g.DrawString(edge.Weight.ToString(), Font, Brushes.White, midpoint);
                 }
             }
 
