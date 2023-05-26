@@ -35,28 +35,6 @@ namespace Graph_tasks
 
             return new PointF(x, y);
         }
-        private static int FindStartVertex(int[,] adjacencyMatrix, bool[] visited)
-        {
-            int vertexCount = adjacencyMatrix.GetLength(0);
-
-            int powerMax = 100;
-            int index = 0;
-            for (int i = 0; i < vertexCount; i++)
-            {
-                int powerVertex = 0;
-                for (int j = 0; j < vertexCount; j++)
-                {
-                    powerVertex += adjacencyMatrix[j, i];
-                }
-                if (powerVertex < powerMax)
-                {
-                    powerMax = powerVertex;
-                    index = i;
-                }
-            }
-
-            return index;
-        }
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,18 +48,40 @@ namespace Graph_tasks
             int[,] adjacencyMatrix = GetAdjacencyMatrix(richTextBox1.Text);
             label3.Text += FindNumberOfComponents(adjacencyMatrix);
         }
+        private static int FindStartVertex(int[,] adjacencyMatrix, bool[] visited)
+        {
+            int vertexCount = adjacencyMatrix.GetLength(0);
+
+            int powerMax = 100;
+            int index = 0;
+            for (int i = 0; i < vertexCount; i++)
+            {
+                int powerVertex = 0;
+                for (int j = 0; j < vertexCount; j++)
+                {
+                    powerVertex += adjacencyMatrix[j, i];
+                }
+                if (powerVertex < powerMax && !visited[i])
+                {
+                    powerMax = powerVertex;
+                    index = i;
+                }
+            }
+
+            return index;
+        }
         static int FindNumberOfComponents(int[,] adjacencyMatrix)
         {
             int numberOfNodes = adjacencyMatrix.GetLength(0);
             bool[] visited = new bool[numberOfNodes];
             int numberOfComponents = 0;
-            DFS(adjacencyMatrix, visited, FindStartVertex(adjacencyMatrix, visited));
+            DFS(adjacencyMatrix, ref visited, FindStartVertex(adjacencyMatrix, visited));
             numberOfComponents++;
             for (int i = 0; i < numberOfNodes; i++)
             {
                 if (!visited[i])
                 {
-                    DFS(adjacencyMatrix, visited, FindStartVertex(adjacencyMatrix, visited));
+                    DFS(adjacencyMatrix, ref visited, FindStartVertex(adjacencyMatrix, visited));
                     numberOfComponents++;
                 }
             }
@@ -89,7 +89,7 @@ namespace Graph_tasks
             return numberOfComponents;
         }
 
-        static void DFS(int[,] adjacencyMatrix, bool[] visited, int currentNode)
+        static void DFS(int[,] adjacencyMatrix, ref bool[] visited, int currentNode)
         {
             visited[currentNode] = true;
             int numberOfNodes = adjacencyMatrix.GetLength(0);
@@ -98,7 +98,7 @@ namespace Graph_tasks
             {
                 if (adjacencyMatrix[currentNode, i] == 1 && !visited[i])
                 {
-                    DFS(adjacencyMatrix, visited, i);
+                    DFS(adjacencyMatrix, ref visited, i);
                 }
             }
         }

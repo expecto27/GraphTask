@@ -154,6 +154,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="task0.resx">
+      <DependentUpon>task0.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="task1.resx">
       <DependentUpon>task1.cs</DependentUpon>
     </EmbeddedResource>
