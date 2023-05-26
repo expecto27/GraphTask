@@ -101,8 +101,24 @@ namespace Graph_tasks
                 for (int i = 0; i < numNodes; i++)
                 {
                     Point node = nodes[i];
-                    g.FillEllipse(Brushes.White, node.X - 20, node.Y - 20, 40, 40);
-                    g.DrawEllipse(Pens.Black, node.X - 20, node.Y - 20, 40, 40);
+
+                    // Проверка, чтобы вершины не выходили за границы PictureBox
+                    int nodeSize = 45;
+                    int nodeX = node.X - nodeSize / 2;
+                    int nodeY = node.Y - nodeSize / 2;
+
+                    if (nodeX < 0)
+                        nodeX = 0;
+                    else if (nodeX + nodeSize > picGraph.Width)
+                        nodeX = picGraph.Width - nodeSize;
+
+                    if (nodeY < 0)
+                        nodeY = 0;
+                    else if (nodeY + nodeSize > picGraph.Height)
+                        nodeY = picGraph.Height - nodeSize;
+
+                    g.FillEllipse(Brushes.White, nodeX, nodeY, nodeSize, nodeSize);
+                    g.DrawEllipse(Pens.Black, nodeX, nodeY, nodeSize, nodeSize);
                     g.DrawString((i + 1).ToString(), Font, Brushes.Black, node.X - 8, node.Y - 8);
                 }
             }
@@ -199,8 +215,8 @@ namespace Graph_tasks
                 for (int i = 0; i < numNodes; i++)
                 {
                     Point node = nodes[i];
-                    g.FillEllipse(Brushes.White, node.X - 20, node.Y - 20, 40, 40);
-                    g.DrawEllipse(Pens.Black, node.X - 20, node.Y - 20, 40, 40);
+                    g.FillEllipse(Brushes.Green, node.X - 20, node.Y - 20, 45, 45);
+                    g.DrawEllipse(Pens.Black, node.X - 20, node.Y - 20, 45, 45);
                     g.DrawString((i + 1).ToString(), Font, Brushes.Black, node.X - 8, node.Y - 8);
                 }
             }
