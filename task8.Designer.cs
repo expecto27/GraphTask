@@ -80,7 +80,7 @@
             // 
             // kp
             // 
-            this.kp.Location = new System.Drawing.Point(130, 185);
+            this.kp.Location = new System.Drawing.Point(116, 170);
             this.kp.Name = "kp";
             this.kp.Size = new System.Drawing.Size(75, 23);
             this.kp.TabIndex = 5;
