@@ -204,7 +204,7 @@ namespace Graph_tasks
             int size = shortestPathsMatrix.GetLength(0);
             richTextBoxResult.Text = "";
 
-            richTextBoxResult.AppendText(Environment.NewLine + "Shortest Paths:" + Environment.NewLine);
+            richTextBoxResult.AppendText(Environment.NewLine + "Кратчайшие пути:" + Environment.NewLine);
 
             for (int i = 0; i < size; i++)
             {
@@ -212,8 +212,8 @@ namespace Graph_tasks
                 {
                     if (shortestPathsMatrix[i, j] != int.MaxValue && i != j)
                     {
-                        richTextBoxResult.AppendText("From " + (i + 1).ToString() + " to " + (j + 1).ToString() +
-                            ": " + pathVerticesMatrix[i, j] + " (Sum: " + shortestPathsMatrix[i, j] + ")" +
+                        richTextBoxResult.AppendText("От " + (i + 1).ToString() + " к " + (j + 1).ToString() +
+                            ": " + pathVerticesMatrix[i, j] + " (Итого: " + shortestPathsMatrix[i, j] + ")" +
                             Environment.NewLine);
                     }
                 }
