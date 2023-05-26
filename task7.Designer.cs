@@ -30,9 +30,9 @@
         {
             this.rtbMatrix = new System.Windows.Forms.RichTextBox();
             this.btnDrawGraph = new System.Windows.Forms.Button();
-            this.btnDrawMST = new System.Windows.Forms.Button();
             this.picGraph = new System.Windows.Forms.PictureBox();
             this.picMST = new System.Windows.Forms.PictureBox();
+            this.lblMSTSum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMST)).BeginInit();
             this.SuspendLayout();
@@ -55,15 +55,6 @@
             this.btnDrawGraph.UseVisualStyleBackColor = true;
             this.btnDrawGraph.Click += new System.EventHandler(this.btnDrawGraph_Click);
             // 
-            // btnDrawMST
-            // 
-            this.btnDrawMST.Location = new System.Drawing.Point(86, 343);
-            this.btnDrawMST.Name = "btnDrawMST";
-            this.btnDrawMST.Size = new System.Drawing.Size(75, 23);
-            this.btnDrawMST.TabIndex = 2;
-            this.btnDrawMST.Text = "button2";
-            this.btnDrawMST.UseVisualStyleBackColor = true;
-            // 
             // picGraph
             // 
             this.picGraph.Location = new System.Drawing.Point(824, 119);
@@ -80,14 +71,23 @@
             this.picMST.TabIndex = 4;
             this.picMST.TabStop = false;
             // 
+            // lblMSTSum
+            // 
+            this.lblMSTSum.AutoSize = true;
+            this.lblMSTSum.Location = new System.Drawing.Point(311, 500);
+            this.lblMSTSum.Name = "lblMSTSum";
+            this.lblMSTSum.Size = new System.Drawing.Size(44, 16);
+            this.lblMSTSum.TabIndex = 5;
+            this.lblMSTSum.Text = "label1";
+            // 
             // task7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1489, 770);
+            this.Controls.Add(this.lblMSTSum);
             this.Controls.Add(this.picMST);
             this.Controls.Add(this.picGraph);
-            this.Controls.Add(this.btnDrawMST);
             this.Controls.Add(this.btnDrawGraph);
             this.Controls.Add(this.rtbMatrix);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -96,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMST)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -103,8 +104,8 @@
 
         private System.Windows.Forms.RichTextBox rtbMatrix;
         private System.Windows.Forms.Button btnDrawGraph;
-        private System.Windows.Forms.Button btnDrawMST;
         private System.Windows.Forms.PictureBox picGraph;
         private System.Windows.Forms.PictureBox picMST;
+        private System.Windows.Forms.Label lblMSTSum;
     }
 }

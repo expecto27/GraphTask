@@ -222,6 +222,9 @@ namespace Graph_tasks
             }
 
             picMST.Image = bmp;
+
+            int mstSum = edges.Sum(e => e.Weight);
+            lblMSTSum.Text = $"Sum: {mstSum}";
         }
 
         private void btnDrawGraph_Click(object sender, EventArgs e)
