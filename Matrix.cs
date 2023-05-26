@@ -24,7 +24,14 @@ namespace Graph_tasks
                 }
                 label1.Text += '\n';
             }
-            
+
+
+            if (M.GetLength(0) > 6)
+            {
+                this.ClientSize = new System.Drawing.Size(950, 473);
+                this.button2.Location = new System.Drawing.Point(350, 400);
+            }
+
         }
 
         private char IntToChar(int n)
