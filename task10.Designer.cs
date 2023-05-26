@@ -72,7 +72,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 29);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Код прюфера:";
+            this.label3.Text = "Код Прюфера:";
             // 
             // panel4
             // 

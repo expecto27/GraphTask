@@ -77,8 +77,10 @@ namespace Graph_tasks
                     matrix[i].Add(adjacencyMatrix[j, i]);
                 }
             }
-
-            label3.Text += GetCodePr(matrix);
+            if(matrix.Count > 2)
+            {
+                label3.Text += GetCodePr(matrix);
+            }
         }
         private static string GetCodePr(List<List<int>> matrix)
         {
