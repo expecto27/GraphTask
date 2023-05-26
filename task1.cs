@@ -249,6 +249,9 @@ namespace Graph_tasks
 
         private void close_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            main M = new main();
+            M.ShowDialog();
             this.Close();
         }
 

@@ -224,11 +224,14 @@ namespace Graph_tasks
             picMST.Image = bmp;
 
             int mstSum = edges.Sum(e => e.Weight);
-            lblMSTSum.Text = $"Sum: {mstSum}";
+            //lblMSTSum.Text = $"Sum: {mstSum}";
         }
 
         private void btnDrawGraph_Click(object sender, EventArgs e)
         {
+            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.btnDrawGraph.Location = new System.Drawing.Point(575, 37);
+            this.close.Location = new System.Drawing.Point(989, 9);
             if (ParseAdjacencyMatrix())
             {
                 DrawGraph();
@@ -250,5 +253,29 @@ namespace Graph_tasks
                 Weight = weight;
             }
         }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            main M = new main();
+            M.ShowDialog();
+            this.Close();
+        }
+
+        Point last;
+        private void task1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - last.X;
+                this.Top += e.Y - last.Y;
+            }
+        }
+
+        private void task1_MouseDown(object sender, MouseEventArgs e)
+        {
+            last = new Point(e.X, e.Y);
+        }
+
     }
 }
