@@ -31,24 +31,24 @@
             this.rtbMatrix = new System.Windows.Forms.RichTextBox();
             this.picGraph = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picMST = new System.Windows.Forms.PictureBox();
             this.close = new System.Windows.Forms.Label();
             this.btnDrawGraph = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.picMST = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picGraph)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMST)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMST)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbMatrix
             // 
             this.rtbMatrix.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.rtbMatrix.Location = new System.Drawing.Point(367, 16);
-            this.rtbMatrix.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbMatrix.Margin = new System.Windows.Forms.Padding(2);
             this.rtbMatrix.Name = "rtbMatrix";
             this.rtbMatrix.Size = new System.Drawing.Size(180, 108);
             this.rtbMatrix.TabIndex = 0;
@@ -57,9 +57,9 @@
             // picGraph
             // 
             this.picGraph.Location = new System.Drawing.Point(21, 199);
-            this.picGraph.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picGraph.Margin = new System.Windows.Forms.Padding(2);
             this.picGraph.Name = "picGraph";
-            this.picGraph.Size = new System.Drawing.Size(536, 361);
+            this.picGraph.Size = new System.Drawing.Size(429, 361);
             this.picGraph.TabIndex = 3;
             this.picGraph.TabStop = false;
             this.picGraph.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
@@ -80,6 +80,15 @@
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
+            // 
+            // picMST
+            // 
+            this.picMST.Location = new System.Drawing.Point(570, 199);
+            this.picMST.Margin = new System.Windows.Forms.Padding(2);
+            this.picMST.Name = "picMST";
+            this.picMST.Size = new System.Drawing.Size(429, 361);
+            this.picMST.TabIndex = 30;
+            this.picMST.TabStop = false;
             // 
             // close
             // 
@@ -143,15 +152,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Введите матрицу смежности";
             // 
-            // picMST
-            // 
-            this.picMST.Location = new System.Drawing.Point(570, 199);
-            this.picMST.Margin = new System.Windows.Forms.Padding(2);
-            this.picMST.Name = "picMST";
-            this.picMST.Size = new System.Drawing.Size(429, 361);
-            this.picMST.TabIndex = 30;
-            this.picMST.TabStop = false;
-            // 
             // task7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,10 +164,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picGraph)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMST)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMST)).EndInit();
             this.ResumeLayout(false);
 
         }
