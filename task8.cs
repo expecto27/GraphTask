@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,9 @@ namespace Graph_tasks
             {
                 DrawGraph();
             }
+            kp_Click();
+            this.ClientSize = new System.Drawing.Size(950, 473);
+            this.close.Location = new System.Drawing.Point(925, 4);
         }
 
         private bool ParseAdjacencyMatrix()
@@ -122,7 +126,7 @@ namespace Graph_tasks
                     int nodeX = node.X - nodeSize / 2;
                     int nodeY = node.Y - nodeSize / 2;
 
-                    // Определение цвета вершины
+                   
                     Brush nodeBrush = Brushes.White;
                     if (i + 1 == startNode) // Проверка, является ли текущая вершина начальной вершиной
                     {
@@ -160,23 +164,23 @@ namespace Graph_tasks
             int[] distance = new int[numNodes];
             bool[] visited = new bool[numNodes];
 
-            // Инициализация расстояний до вершин как бесконечность
+            
             for (int i = 0; i < numNodes; i++)
             {
                 distance[i] = int.MaxValue;
                 visited[i] = false;
             }
 
-            // Расстояние до начальной вершины равно 0
+            
             distance[startNode - 1] = 0;
 
-            // Алгоритм Дейкстры
+            
             for (int count = 0; count < numNodes - 1; count++)
             {
                 int minDistance = int.MaxValue;
                 int minIndex = -1;
 
-                // Найти вершину с минимальным расстоянием, которая еще не посещена
+               
                 for (int i = 0; i < numNodes; i++)
                 {
                     if (!visited[i] && distance[i] < minDistance)
@@ -186,10 +190,10 @@ namespace Graph_tasks
                     }
                 }
 
-                // Посетить найденную вершину
+                
                 visited[minIndex] = true;
 
-                // Обновить расстояния до соседних вершин
+                
                 for (int i = 0; i < numNodes; i++)
                 {
                     if (!visited[i] && adjacencyMatrix[minIndex, i] > 0 && distance[minIndex] != int.MaxValue &&
@@ -200,7 +204,7 @@ namespace Graph_tasks
                 }
             }
 
-            // Создать словарь, содержащий кратчайшие пути до каждой вершины
+            
             Dictionary<int, int> shortestPaths = new Dictionary<int, int>();
             for (int i = 0; i < numNodes; i++)
             {
@@ -238,7 +242,7 @@ namespace Graph_tasks
             }
         }
 
-        private void kp_Click(object sender, EventArgs e)
+        private void kp_Click()
         {
             if (!int.TryParse(txtStartNode.Text, out startNode))
             {
@@ -254,6 +258,32 @@ namespace Graph_tasks
 
             Dictionary<int, int> shortestPaths = FindShortestPaths(startNode);
             DisplayShortestPaths(shortestPaths);
+        }
+        Point last;
+        private void task1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - last.X;
+                this.Top += e.Y - last.Y;
+            }
+        }
+
+        private void task1_MouseDown(object sender, MouseEventArgs e)
+        {
+            last = new Point(e.X, e.Y);
+        }
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            main M = new main();
+            M.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Process proc = Process.Start("notepad.exe");
         }
     }
 }

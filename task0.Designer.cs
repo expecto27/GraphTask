@@ -71,8 +71,10 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 523);
+            this.panel1.Size = new System.Drawing.Size(567, 523);
             this.panel1.TabIndex = 5;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // pictureBox2
             // 
@@ -83,6 +85,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(58, 59);
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // label3
             // 
@@ -101,7 +104,7 @@
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(569, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 470);
+            this.panel4.Size = new System.Drawing.Size(5, 523);
             this.panel4.TabIndex = 29;
             // 
             // label2
@@ -123,6 +126,8 @@
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // close
             // 
@@ -136,6 +141,7 @@
             this.close.Size = new System.Drawing.Size(27, 25);
             this.close.TabIndex = 27;
             this.close.Text = "X";
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // button1
             // 
@@ -159,6 +165,8 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(569, 162);
             this.panel3.TabIndex = 14;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // panel2
             // 
@@ -169,6 +177,8 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(570, 141);
             this.panel2.TabIndex = 0;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.task1_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.task1_MouseMove);
             // 
             // richTextBox1
             // 
@@ -249,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 523);
+            this.ClientSize = new System.Drawing.Size(567, 523);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "task0";

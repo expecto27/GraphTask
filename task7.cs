@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -286,5 +287,9 @@ namespace Graph_tasks
             last = new Point(e.X, e.Y);
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Process proc = Process.Start("notepad.exe");
+        }
     }
 }
