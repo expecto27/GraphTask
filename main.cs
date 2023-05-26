@@ -130,5 +130,14 @@ namespace Graph_tasks
         {
             last = new Point(e.X, e.Y);
         }
+
+        private void button0_Click(object sender, EventArgs e)
+        {
+            task0 t = new task0();
+            this.Hide();
+            t.ShowDialog();
+            this.Close();
+        }
+
     }
 }

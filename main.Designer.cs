@@ -45,6 +45,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button0 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -150,7 +151,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button5.ForeColor = System.Drawing.Color.Orange;
-            this.button5.Location = new System.Drawing.Point(399, 210);
+            this.button5.Location = new System.Drawing.Point(399, 209);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 52);
             this.button5.TabIndex = 18;
@@ -280,6 +281,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.panel1.Controls.Add(this.button0);
             this.panel1.Controls.Add(this.close);
             this.panel1.Controls.Add(this.button12);
             this.panel1.Controls.Add(this.button11);
@@ -301,6 +303,21 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.main_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.main_MouseMove);
+            // 
+            // button0
+            // 
+            this.button0.BackColor = System.Drawing.Color.Transparent;
+            this.button0.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button0.Font = new System.Drawing.Font("Impact", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button0.ForeColor = System.Drawing.Color.Orange;
+            this.button0.Location = new System.Drawing.Point(141, 451);
+            this.button0.Name = "button0";
+            this.button0.Size = new System.Drawing.Size(365, 52);
+            this.button0.TabIndex = 28;
+            this.button0.Text = "Задача 0";
+            this.button0.UseVisualStyleBackColor = false;
+            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // main
             // 
@@ -338,6 +355,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label close;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button0;
     }
 }
 
