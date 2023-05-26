@@ -63,12 +63,27 @@ namespace Graph_tasks
             Random random = new Random();
 
             // Определение координат вершин
+            int nodeSize = 40;
+            int padding = 20;
+            int maxX = picGraph.Width - nodeSize - padding;
+            int maxY = picGraph.Height - nodeSize - padding;
+
             for (int i = 0; i < numNodes; i++)
             {
-                int x = random.Next(50, picGraph.Width - 50);
-                int y = random.Next(50, picGraph.Height - 50);
+                int x = random.Next(padding, maxX);
+                int y = random.Next(padding, maxY);
 
-                nodes.Add(new Point(x, y));
+                Point node = new Point(x, y);
+
+                // Проверка наложения вершин
+                while (nodes.Any(n => Distance(node, n) < nodeSize + padding))
+                {
+                    x = random.Next(padding, maxX);
+                    y = random.Next(padding, maxY);
+                    node = new Point(x, y);
+                }
+
+                nodes.Add(node);
             }
 
             // Создание ребер и определение их весов
@@ -102,20 +117,8 @@ namespace Graph_tasks
                 {
                     Point node = nodes[i];
 
-                    // Проверка, чтобы вершины не выходили за границы PictureBox
-                    int nodeSize = 45;
                     int nodeX = node.X - nodeSize / 2;
                     int nodeY = node.Y - nodeSize / 2;
-
-                    if (nodeX < 0)
-                        nodeX = 0;
-                    else if (nodeX + nodeSize > picGraph.Width)
-                        nodeX = picGraph.Width - nodeSize;
-
-                    if (nodeY < 0)
-                        nodeY = 0;
-                    else if (nodeY + nodeSize > picGraph.Height)
-                        nodeY = picGraph.Height - nodeSize;
 
                     g.FillEllipse(Brushes.White, nodeX, nodeY, nodeSize, nodeSize);
                     g.DrawEllipse(Pens.Black, nodeX, nodeY, nodeSize, nodeSize);
@@ -126,6 +129,12 @@ namespace Graph_tasks
             picGraph.Image = bmp;
         }
 
+        private double Distance(Point p1, Point p2)
+        {
+            int dx = p2.X - p1.X;
+            int dy = p2.Y - p1.Y;
+            return Math.Sqrt(dx * dx + dy * dy);
+        }
         private void FindMinimumSpanningTree()
         {
             List<int> selectedNodes = new List<int>(); // Список выбранных вершин
